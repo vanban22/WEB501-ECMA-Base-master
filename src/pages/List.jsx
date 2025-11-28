@@ -38,12 +38,12 @@ function ListPage() {
             <tr>
               <th className="px-4 py-2 border">ID</th>
               <th className="px-4 py-2 border">Name</th>
-              <th className="px-4 py-2 border">Destination</th>
-              <th className="px-4 py-2 border">Duration</th>
-              <th className="px-4 py-2 border">Price</th>
-              <th className="px-4 py-2 border">Image</th>
-              <th className="px-4 py-2 border">Available</th>
-              <th className="px-4 py-2 border">Handle</th>
+              <th className="px-4 py-2 border">Điểm đến</th>
+              <th className="px-4 py-2 border">thời gian</th>
+              <th className="px-4 py-2 border">Giá</th>
+              <th className="px-4 py-2 border">Ảnh</th>
+              <th className="px-4 py-2 border">chỗ</th>
+              <th className="px-4 py-2 border">Hành động</th>
             </tr>
           </thead>
 

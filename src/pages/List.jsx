@@ -11,7 +11,7 @@ function ListPage() {
         const { data } = await axios.get('http://localhost:3000/tours')
         setTours(data)
       } catch (error) {
-        toast.error(error.message)   // ⬅ SỬA LỖI
+        toast.error(error.message)
       }
     }
     getTours()
@@ -25,7 +25,7 @@ function ListPage() {
         toast.success('Ok tao da xoa duoc roi')
       }
     } catch (error) {
-      toast.error(error.message)   // ⬅ SỬA LỖI
+      toast.error(error.message)
     }
   }
 
@@ -83,6 +83,12 @@ function ListPage() {
                 </td>
 
                 <td className="px-4 py-2 border border-gray-300">
+                  <a
+                    href={`/edit/${tour.id}`}
+                    className="text-blue-600 hover:underline mr-4"
+                  >
+                    Edit
+                  </a>
                   <button
                     onClick={() => handleDelete(tour.id)}
                     className="text-red-600 hover:underline"
@@ -100,5 +106,4 @@ function ListPage() {
     </div>
   )
 }
-
 export default ListPage

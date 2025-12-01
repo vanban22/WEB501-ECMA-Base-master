@@ -23,23 +23,24 @@ const TourAdd = () => {
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+ const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    try {
-      await axios.post("http://localhost:3000/tours", {
-        ...formData,
-        price: Number(formData.price),
-        available: Number(formData.available),
-      });
+  try {
+    await axios.post("http://localhost:3000/tours", {
+      ...formData,
+      price: Number(formData.price) || 0,
+      available: Number(formData.available) || 0,
+    });
 
-      alert("Thêm tour thành công!");
-      navigate("/tours");
-    } catch (error) {
-      console.error("Lỗi:", error);
-      alert("Thêm thất bại!");
-    }
-  };
+    alert("Thêm tour thành công!");
+    navigate("/list");
+  } catch (error) {
+    console.error("Lỗi:", error);
+    alert("Thêm thất bại!");
+  }
+};
+
 
   return (
     <div className="max-w-xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-md border">

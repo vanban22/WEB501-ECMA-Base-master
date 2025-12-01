@@ -2,7 +2,7 @@ import { Toaster } from 'react-hot-toast'
 import { Routes, Route, Link } from 'react-router-dom'
 import ListPage from './pages/List'
 import AddTour from './pages/Add'
-
+import Edit from "./pages/Edit"
 function App() {
   return (
     <>
@@ -42,6 +42,7 @@ function App() {
         <Routes>
           <Route path="/list" element={<ListPage />} />
           <Route path="/add" element={<AddTour />} />
+          <Route path="/edit/:id" element={<Edit />} /> 
         </Routes>
       </div>
 

@@ -3,12 +3,15 @@ import { Routes, Route, Link } from 'react-router-dom'
 import ListPage from './pages/List'
 import AddTour from './pages/Add'
 import Edit from "./pages/Edit"
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+
 function App() {
   return (
     <>
       <nav className="bg-blue-600 text-white shadow">
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-          
+
           {/* Logo (có thể dùng Link cho đúng) */}
           <Link to="/" className="text-xl font-semibold">
             <strong>WEB501 App</strong>
@@ -29,9 +32,10 @@ function App() {
           </div>
 
           <div className="hidden md:flex items-center space-x-6">
-            <a href="#" className="hover:text-gray-200">Đăng nhập</a>
-            <a href="#" className="hover:text-gray-200">Đăng ký</a>
+            <Link to="/login" className="hover:text-gray-200">Đăng nhập</Link>
+            <Link to="/register" className="hover:text-gray-200">Đăng ký</Link>
           </div>
+
         </div>
       </nav>
 
@@ -42,7 +46,9 @@ function App() {
         <Routes>
           <Route path="/list" element={<ListPage />} />
           <Route path="/add" element={<AddTour />} />
-          <Route path="/edit/:id" element={<Edit />} /> 
+          <Route path="/edit/:id" element={<Edit />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </div>
 

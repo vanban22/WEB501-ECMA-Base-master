@@ -40,5 +40,17 @@
       "description": "a",
       "available": 2
     }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "admin@gmail.com",
+      "password": "123456"
+    },
+    {
+      "email": "users@gmail.com",
+      "password": "$2a$10$3.Rz6GQFzy0IDihMl6v9welISFlGcSgSOlyjTZeXcz9iDJW0ozCYG",
+      "id": 2
+    }
   ]
 }

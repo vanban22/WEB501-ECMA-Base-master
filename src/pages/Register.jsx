@@ -19,17 +19,16 @@ const Register = () => {
     e.preventDefault();
 
     if (!form.email.includes("@")) {
-      alert("Email không hợp lệ");
+      // alert("Email không hợp lệ");
       return;
     }
     if (form.password.length < 6) {
-      alert("Mật khẩu tối thiểu 6 ký tự");
+      // alert("Mật khẩu tối thiểu 6 ký tự");
       return;
     }
 
     try {
       await axios.post("http://localhost:3000/users", form);
-      alert("Đăng ký thành công!");
       navigate("/login");
     } catch (error) {
       console.log(error);

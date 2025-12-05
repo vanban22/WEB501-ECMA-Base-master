@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import toast from "react-hot-toast";
 const TourAdd = () => {
   const navigate = useNavigate();
 
@@ -23,23 +23,21 @@ const TourAdd = () => {
     });
   };
 
- const handleSubmit = async (e) => {
-  e.preventDefault();
-
-  try {
-    await axios.post("http://localhost:3000/tours", {
-      ...formData,
-      price: Number(formData.price) || 0,
-      available: Number(formData.available) || 0,
-    });
-
-    alert("Thêm tour thành công!");
-    navigate("/list");
-  } catch (error) {
-    console.error("Lỗi:", error);
-    alert("Thêm thất bại!");
-  }
-};
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post("http://localhost:3000/tours", {
+        ...formData,
+        price: Number(formData.price) || 0,
+        available: Number(formData.available) || 0,
+      });
+      toast.success('thành cong')
+      // toast.error('lhsdhhd')
+      navigate("/list");
+    } catch (error) {
+      toast.error("Lỗi:", error);
+    }
+  };
 
 
   return (
@@ -94,7 +92,7 @@ const TourAdd = () => {
 
         {/* Giá */}
         <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2">Giá (VNĐ)</label>
+          <label className="block text-gray-700 font-bold mb-2">Giá</label>
           <input
             type="number"
             name="price"
@@ -147,22 +145,7 @@ const TourAdd = () => {
             rows={4}
             required
           ></textarea>
-
-
-          {/* <div className="mb-4">
-            <label className="block text-gray-700 font-bold mb-2">Thời lượng</label>
-            <input
-              type="text"
-              name="duration"
-              value={formData.duration}
-              onChange={handleChange}
-              className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
-              placeholder="Ví dụ: 3 ngày 2 đêm"
-              required
-            />
-          </div> */}
         </div>
-
         <button
           type="submit"
           className="w-full bg-blue-600 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition"

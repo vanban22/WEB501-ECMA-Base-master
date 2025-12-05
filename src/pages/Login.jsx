@@ -27,15 +27,10 @@ const Login = () => {
         alert("Sai tài khoản hoặc mật khẩu!");
         return;
       }
-
-      // Lưu token giả
       localStorage.setItem("token", "login_success_token");
-
-      alert("Đăng nhập thành công!");
       navigate("/list");
     } catch (error) {
       console.log(error);
-      alert("Đăng nhập thất bại!");
     }
   };
 

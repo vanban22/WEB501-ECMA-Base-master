@@ -15,8 +15,6 @@ const Edit = () => {
     description: "",
     available: "",
   });
-
-  // Lấy dữ liệu tour cũ
   useEffect(() => {
     const fetchData = async () => {
       const { data } = await axios.get(`http://localhost:3000/tours/${id}`);
@@ -25,7 +23,6 @@ const Edit = () => {
     fetchData();
   }, [id]);
 
-  // Cập nhật giá trị input
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -34,7 +31,6 @@ const Edit = () => {
     });
   };
 
-  // Gửi API PUT cập nhật
   const handleSubmit = async (e) => {
     e.preventDefault();
 

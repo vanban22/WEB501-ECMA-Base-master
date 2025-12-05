@@ -39,6 +39,16 @@
       "duration": "3 ngày 2 đêm",
       "description": "a",
       "available": 2
+    },
+    {
+      "name": "admin",
+      "price": 1000000,
+      "image": "https://picsum.photos/400/300?random=2",
+      "destination": "Sapa",
+      "duration": "3 ngày 2 đêm",
+      "description": "hhh",
+      "available": 20,
+      "id": "zo6G30_"
     }
   ],
   "users": [

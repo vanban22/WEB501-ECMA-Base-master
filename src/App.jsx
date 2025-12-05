@@ -22,7 +22,7 @@ function App() {
             <Link to="/add" className="hover:text-gray-200">Thêm mới</Link>
           </div>
 
-          {/* NÚT ĐĂNG XUẤT / LOGIN */}
+          
           <div className="hidden md:flex items-center space-x-6">
             {localStorage.getItem("token") ? (
               <button
@@ -52,11 +52,7 @@ function App() {
         <p className="text-lg text-gray-600">Ứng dụng quản lý dữ liệu</p>
 
         <Routes>
-          {/* <Route element={<Adminlayout />}>
-            <Route path="/list" element={<ListPage />} />
-            <Route path="/add" element={<AddTour />} />
-            <Route path="/edit/:id" element={<Edit />} />
-          </Route> */}
+          
           <Route element={<AdminLayout />} >
             <Route path="/list" element={<ListPage />} />
             <Route path="/add" element={<AddTour />} />
